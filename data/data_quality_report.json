@@ -1,0 +1,60 @@
+{
+  "row_count": 20000,
+  "columns": [
+    "Accident_ID",
+    "Date",
+    "Time",
+    "State",
+    "District",
+    "Latitude",
+    "Longitude",
+    "Road_Type",
+    "Weather",
+    "Light_Condition",
+    "Driver_Age",
+    "Driver_Gender",
+    "Vehicle_Type",
+    "Speed_kmph",
+    "Alcohol_Involved",
+    "Driver_Drowsy",
+    "Pothole_Involved",
+    "Cause_of_Accident",
+    "Severity",
+    "Casualties"
+  ],
+  "missing_values": {
+    "Accident_ID": 0,
+    "Date": 0,
+    "Time": 0,
+    "State": 0,
+    "District": 0,
+    "Latitude": 0,
+    "Longitude": 0,
+    "Road_Type": 0,
+    "Weather": 0,
+    "Light_Condition": 0,
+    "Driver_Age": 0,
+    "Driver_Gender": 0,
+    "Vehicle_Type": 0,
+    "Speed_kmph": 0,
+    "Alcohol_Involved": 0,
+    "Driver_Drowsy": 0,
+    "Pothole_Involved": 0,
+    "Cause_of_Accident": 0,
+    "Severity": 0,
+    "Casualties": 793
+  },
+  "severity_distribution": {
+    "Low": 9000,
+    "Medium": 7000,
+    "High": 4000
+  },
+  "top_causes": {
+    "Poor Weather Visibility": 8132,
+    "Over Speeding": 3470,
+    "Signal Jumping": 2804,
+    "Drunk Driving": 2183,
+    "Pothole/Bad Road": 1819,
+    "Drowsy Driving": 1592
+  }
+}

@@ -30,3 +30,65 @@ OR Speed_kmph IS NULL
 OR Alcohol_Involved IS NULL;
 
 
+select  * from road_accident_prevention_clean ;
+
+SELECT Driver_Age ,State, SUM(Casualties) AS Total_Accidents 
+FROM road_accident_prevention_clean 
+GROUP BY Driver_Age  , State 
+ORDER BY Driver_Age ASC ;
+
+
+SELECT Driver_Age,Road_Type ,SUM(Casualties) AS Total_Accidents 
+FROM road_accident_prevention_clean 
+GROUP BY Driver_Age,Road_Type 
+ORDER BY Driver_Age ASC ;
+
+SELECT Driver_Age,Driver_Gender ,SUM(Casualties) AS Total_Accidents 
+FROM road_accident_prevention_clean 
+GROUP BY Driver_Age,Driver_Gender
+ORDER BY Driver_Age ASC ;
+
+SELECT COUNT(*) AS road_accident_prevention_clean
+FROM road_accident_prevention_clean;
+
+
+SELECT SUM(Casualties) AS road_accident_prevention_clean
+
+FROM road_accident_prevention_clean;
+
+
+SELECT Count(*) AS Alcohol_invovlved_accidents
+FROM road_accident_prevention_clean
+Where Alcohol_Involved = 'Yes'; 
+
+
+
+
+SELECT *,
+  dense_rank() OVER (PARTITION BY State order by Casualties DESC) AS 'Rank_of_Casualties'
+  FROM road_accident_prevention_clean;
+  
+SELECT *,
+  dense_rank() OVER (PARTITION BY State,District,Driver_Gender order by Casualties DESC) AS 'Gender'
+  FROM road_accident_prevention_clean;
+  
+  
+SELECT *,
+row_number() OVER (ORDER BY Casualties) AS 'Row NUmbers'
+FROM road_accident_prevention_clean;
+
+SELECT Date,
+COUNT(Casualties) AS Daily_Accidents ,
+SUM(COUNT(Casualties)) OVER (ORDER BY Date) AS Running_Total
+FROM road_accident_prevention_clean 
+GROUP BY Date
+ORDER BY Date;
+
+
+SELECT
+    Date,
+    COUNT(*) AS Daily_Accidents,
+    SUM(COUNT(*)) OVER (ORDER BY Date) AS Running_Total
+FROM road_accident_prevention_clean
+GROUP BY Date
+ORDER BY Date;
